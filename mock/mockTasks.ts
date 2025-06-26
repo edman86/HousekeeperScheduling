@@ -1,0 +1,51 @@
+export const mockTasks = [
+    {
+      id: '1',
+      title: 'Clean Room 101',
+      duration: 45,
+      deadline: '2025-06-24T14:00:00Z',
+      hotelApartment: 'Hotel A, Apt 101',
+      assignedTo: null,
+    },
+    {
+      id: '2',
+      title: 'Change linens in Room 204',
+      duration: 30,
+      deadline: '2025-06-24T13:30:00Z',
+      hotelApartment: 'Hotel A, Apt 204',
+      assignedTo: 1,
+    },
+    {
+      id: '3',
+      title: 'Restock bathroom supplies - Room 305',
+      duration: 20,
+      deadline: '2025-06-24T12:45:00Z',
+      hotelApartment: 'Hotel B, Apt 305',
+      assignedTo: 2,
+    },
+    {
+      id: '4',
+      title: 'Clean Room 402',
+      duration: 50,
+      deadline: '2025-06-24T15:00:00Z',
+      hotelApartment: 'Hotel C, Apt 402',
+      assignedTo: null,
+    },
+    {
+      id: '5',
+      title: 'Tidy common area - Floor 1',
+      duration: 25,
+      deadline: '2025-06-24T12:00:00Z',
+      hotelApartment: 'Hotel B, Lobby',
+      assignedTo: 3,
+    },
+    {
+      id: '6',
+      title: 'Sanitize elevator surfaces',
+      duration: 15,
+      deadline: '2025-06-24T11:30:00Z',
+      hotelApartment: 'Hotel A, Elevator 1',
+      assignedTo: null,
+    },
+  ];
+  
