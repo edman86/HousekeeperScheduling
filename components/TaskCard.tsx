@@ -20,23 +20,13 @@ export default function TaskCard({
   onUnassign, 
   onReceiveDragDrop 
 }: TaskCardProps) {
-  return (
-    <DraxView
-      receptive={true}
-      dragPayload={JSON.stringify(task)}
-      draggable
-      draggingStyle={styles.dragging}
-      style={styles.task}
-      onReceiveDragDrop={onReceiveDragDrop}
-    >
+  const renderCardContent = () => (
+    <View style={styles.task}>
       <View style={styles.taskContent}>
-        <Text style={styles.taskTitle}>
-          {isAssigned && typeof index === 'number' ? `${index + 1}. ` : ''}
-          {task.title}
-        </Text>
-        <Text style={styles.taskDetails}>
-          {task.hotelApartment} • {task.duration} min
-        </Text>
+        <View style={styles.taskTitleContainer}>
+          <Text style={styles.taskOrder}>{isAssigned && typeof index === 'number' ? `${index + 1}. ` : ''}</Text>
+          <Text style={styles.taskTitle}>{task.title}</Text>
+        </View>
       </View>
       
       {isAssigned ? (
@@ -54,14 +44,26 @@ export default function TaskCard({
           <AntDesign name="plus" size={16} color="white" />
         </Pressable>
       )}
-    </DraxView>
+    </View>
+  );
+
+  return (
+    <DraxView
+      receptive
+      dragPayload={JSON.stringify(task)}
+      draggable
+      draggingStyle={styles.dragging}
+      onReceiveDragDrop={onReceiveDragDrop}
+      renderContent={renderCardContent}
+    />
   );
 }
 
 const styles = StyleSheet.create({
   task: {
     backgroundColor: '#ffffff',
-    padding: 12,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
     marginVertical: 6,
     borderRadius: 8,
     borderWidth: 1,
@@ -73,21 +75,24 @@ const styles = StyleSheet.create({
   taskContent: {
     flex: 1,
   },
-  taskTitle: { 
-    fontSize: 16, 
-    fontWeight: '500' 
+  taskTitleContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
-  taskDetails: { 
+  taskOrder: {
+    marginRight: 2,
+    fontSize: 14,
+  },
+  taskTitle: { 
     fontSize: 14, 
-    color: '#666', 
-    marginTop: 4 
+    fontWeight: '500',
+    color: '#000',
   },
   dragging: {
     opacity: 0.7,
-    backgroundColor: '#e0e0e0',
+    backgroundColor: '#ffffff',
     borderColor: '#3498db',
     borderWidth: 2,
-    transform: [{ scale: 1.05 }],
   },
   assignButton: {
     backgroundColor: '#4caf50',
