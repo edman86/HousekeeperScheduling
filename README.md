@@ -10,12 +10,6 @@ This project uses **Node.js v22.16.0**. Please ensure you are using this version
   npm install -g expo-cli
   ```
 
-- Make sure you have the Expo SDK installed. If not, run:
-
-  ```bash
-  npx expo install
-  ```
-
 ## Get started
 
 1. Install dependencies

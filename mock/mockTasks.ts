@@ -17,7 +17,7 @@ export const mockTasks = [
     },
     {
       id: '3',
-      title: 'Restock bathroom supplies - Room 305',
+      title: 'Restock supplies',
       duration: 20,
       deadline: '2025-06-24T12:45:00Z',
       hotelApartment: 'Hotel B, Apt 305',

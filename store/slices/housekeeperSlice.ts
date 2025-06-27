@@ -18,23 +18,15 @@ const initialState: HousekeeperState = {
   isHousekeepersError: false
 }
 
-/**
- * Async thunk to fetch housekeepers from the API
- * Initially uses mock data, but can be modified to fetch from a real API
- */
 export const fetchHousekeepers = createAsyncThunk(
   'housekeepers/fetchHousekeepers',
   async (_, { rejectWithValue }) => {
     try {
-      // In a real app, this would be a fetch call to an API
-      // For now, we'll simulate a network request with a delay
       await new Promise(resolve => setTimeout(resolve, 500));
-      
-      // Return mock data
       return mockHousekeepers;
       
       // Real API implementation would be:
-      // const response = await fetch('/housekeepers');
+      // const response = await fetch(`{API_URL}/housekeepers`);
       // if (!response.ok) throw new Error('Failed to fetch housekeepers');
       // return await response.json();
     } catch (error) {
